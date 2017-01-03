@@ -1,6 +1,6 @@
 function isUnique (str){
   var temp = [];
-  if(str.length>26){
+  if(str.length>128){
     return false;
   }
   for(var i =0; i<str.length; i++){
