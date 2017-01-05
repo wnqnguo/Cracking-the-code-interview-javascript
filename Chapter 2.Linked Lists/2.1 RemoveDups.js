@@ -28,7 +28,7 @@ function removeDups(list){
       prev.next = curr.next;
     }else{
       obj[curr.value] = true;
-      prev = curr;
+       prev = curr;
     }
     curr = curr.next;
   }
