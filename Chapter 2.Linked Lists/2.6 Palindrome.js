@@ -19,25 +19,30 @@ LinkedList.prototype.add = function(value){
   curr.next = node;
   return node;
 }
-function removeDups(list){
-  var obj = {}
+function isPalindrome(list){
   var curr = list.head;
   var prev = null;
   while(curr){
-    if(obj.hasOwnProperty(curr.value)){
-      prev.next = curr.next;
-    }else{
-      obj[curr.value] = true;
-      prev = curr;
-    }
+
+    var curr_copy = new Node (curr.value);
+    curr_copy.next = prev;
+    prev = curr_copy ;
     curr = curr.next;
   }
-
+  var head = list.head;
+  while(prev && head){
+    if(prev.value!=head.value){
+      return false;
+    }
+    prev = prev.next;
+    head = head.next;
+  }
+  return prev == null && head ==null;
 }
-var test = new LinkedList()
-test.add(3);
-test.add(4);
-test.add(5);
-test.add(3);
-removeDups(test);
-console.dir("test is "+test);
+var test = new LinkedList();
+test.add(0);
+test.add(1);
+test.add(2);
+test.add(1);
+test.add(0);
+isPalindrome(test);
