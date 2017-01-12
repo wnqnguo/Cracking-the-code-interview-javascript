@@ -39,6 +39,7 @@ function isPalindrome(list){
   }
   return prev == null && head ==null;
 }
+
 var test = new LinkedList();
 test.add(0);
 test.add(1);
