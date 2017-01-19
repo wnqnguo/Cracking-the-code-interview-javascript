@@ -1,7 +1,7 @@
 function magicIndex (arr){
   index = Math.floor(arr.length/2);
   if(arr.length==1 && arr[index]!==index){
-    return false;
+    return -1;
   }
   if(arr[index]==index){
     return index;
